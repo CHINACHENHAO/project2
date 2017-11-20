@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>直接缴款</title>
+    <link rel="stylesheet" href="src/css/reset.css">
+    <link rel="stylesheet" href="src/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="src/layui-v2.1.5/layui/css/layui.css">
+    <link rel="stylesheet" href="src/DataTables-1.10.7/jquery.dataTables.css">
+    <link rel="stylesheet" href="src/DataTables-1.10.7/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" href="src/DataTables-1.10.7/buttons.dataTables.min.css">
+    <link rel="stylesheet" href="src/css/zhijiejiaokuan.css">
+</head>
+
+<body>
+    <div>
+        <form id="form" class="layui-form" action="/NTSF/ExportServlet" method="post" target="iframe">
+            <div id="toolbar" class="toolbar layui-form-item">
+                <button type="button" id=" " class="btn btn-primary btn-sm"> <span class="glyphicon glyphicon-export">&nbsp;</span>导出</button>
+                <button type="button" id=" " class="btn btn-primary btn-sm"> <span class="glyphicon glyphicon-search">&nbsp;</span>查询</button>
+            </div>
+            <div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">票据号码</label>
+                    <div class="layui-input-block">
+                        <input class="form-control" id=" " lay-filter=" " name=" ">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">收款人</label>
+                    <div class="layui-input-block">
+                        <input class="form-control" id=" " lay-filter=" " name=" ">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">开始票号</label>
+                    <div class="layui-input-block">
+                        <input class="form-control" id=" " lay-filter=" " name=" ">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">结束票号</label>
+                    <div class="layui-input-block">
+                        <input class="form-control" id=" " lay-filter=" " name=" ">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">模糊查询</label>
+                    <div class="layui-input-block">
+                        <input class="form-control" id=" " lay-filter=" " name=" ">
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">开始日期</label>
+                    <div class="layui-input-block">
+                        <input class="form-control" lay-verify="" lay-filter="startDate" id="startDate">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">结束日期</label>
+                    <div class="layui-input-block">
+                        <input class="form-control" lay-verify="" lay-filter="endDate" id="endDate">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">收费项目</label>
+                    <div class="layui-input-block">
+                        <select lay-verify="" lay-filter=" " id=" "></select>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">收款银行</label>
+                    <div class="layui-input-block">
+                        <select lay-verify="" lay-filter=" " id=" "></select>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">执收单位</label>
+                    <div class="layui-input-block">
+                        <select lay-verify="" lay-filter=" " id=" "></select>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div>
+        <div id="bodypanel" class="panel panel-default">
+            <div class="panel-body" align="center">
+                <table id="table_main" class="table table-bordered table-striped table-condensed table-hover table-main">
+                    <thead>
+                        <tr align="center">
+                            <th class="check_center">
+                                <input type="checkbox" id="checkAll">
+                            </th>
+                            <th>票据代码</th>
+                            <th>票据号码</th>
+                            <th>执收单位代码</th>
+                            <th>执收单位名称</th>
+                            <th>缴款人全称</th>
+                            <th>金额</th>
+                            <th>收款人全称</th>
+                            <th>收款人开户行</th>
+                            <th>收款人账号</th>
+                            <th>开票人</th>
+                            <th>作废人</th>
+                            <th>开票日期</th>
+                            <th>首款日期</th>
+                            <th>备注</th>
+                            <th>收费项目编码</th>
+                            <th>收费项目名称</th>
+                            <th>收费标准</th>
+                            <th>计量单位</th>
+                            <th>收费项目金额</th>
+                            <th>数量</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="src/js/jquery-3.2.1.min.js"></script>
+<script src="src/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="src/DataTables-1.10.7/dataTables.bootstrap.min.js"></script>
+<script src="src/layui-v2.1.5/layui/layui.all.js"></script>
+<script src="src/js/zhijiejiaokuan.js"></script>
+
+<html>
